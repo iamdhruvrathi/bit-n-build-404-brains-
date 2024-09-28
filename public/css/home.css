@@ -29,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px;
+    padding: 40px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -39,32 +39,32 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
     color: var(--text-color);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 20px;
     color: var(--text-color);
 }
 
 .hero-buttons {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .scan-btn, .add-btn {
-    padding: 12px 25px;
+    padding: 10px 20px;
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
-    margin-right: 10px;
+    margin-right: 5px;
     cursor: pointer;
-    border-radius: 25px;
-    font-size: 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
     transition: 0.3s;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .scan-btn:hover, .add-btn:hover {
@@ -77,19 +77,19 @@ body {
 }
 
 .search-bar input {
-    padding: 10px;
-    width: 250px;
+    padding: 8px;
+    width: 200px;
     border: 1px solid #ddd;
-    border-radius: 25px 0 0 25px;
+    border-radius: 20px 0 0 20px;
     transition: 0.3s;
 }
 
 .search-bar button {
-    padding: 10px;
+    padding: 8px;
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -103,19 +103,8 @@ body {
     height: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .wardrobe-section {
-    padding: 40px 60px;
+    padding: 20px 30px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -123,19 +112,20 @@ body {
 .category-buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
 .category-btn {
-    padding: 10px 20px;
+    padding: 8px 15px;
     margin: 5px;
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 0.9rem;
 }
 
 .category-btn.active {
@@ -155,8 +145,8 @@ body {
 
 .category-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
     flex: 0 0 100%;
 }
 
@@ -164,22 +154,23 @@ body {
     background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     transition: 0.3s;
+    font-size: 0.9rem;
 }
 
 .item-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .item-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .nav-btn {
@@ -190,9 +181,9 @@ body {
     color: var(--button-color);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
     z-index: 10;
@@ -208,4 +199,36 @@ body {
 
 .nav-btn:hover {
     background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scan-btn, .add-btn {
+        margin: 10px 0;
+        width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+.hero-buttons {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scan-btn, .add-btn {
+        margin: 10px 0;
+        width: 80%;
+        font-size: 0.9rem;
+    }
 }
