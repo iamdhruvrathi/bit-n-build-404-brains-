@@ -11,11 +11,10 @@
 
 .dark-mode {
     --background-color: #000000;
-    
     --text-color: #ffffff;
-    --button-background: #6C63FF;
+    --button-background: #fff;
     --button-color: #000000;
-    --button-hover-background: #ffffff;
+    --button-hover-background: #6C63FF;
     --button-hover-color: #000000;
 }
 
@@ -113,3 +112,100 @@ body {
 
 
 
+
+
+.wardrobe-section {
+    padding: 40px 60px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-btn.active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.wardrobe-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.wardrobe-items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.category-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    flex: 0 0 100%;
+}
+
+.item-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.nav-btn.prev {
+    left: 10px;
+}
+
+.nav-btn.next {
+    right: 10px;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-color);
+}

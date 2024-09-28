@@ -1,4 +1,4 @@
-// Select elements
+
 const container = document.querySelector(".container");
 const signinForm = document.querySelector(".signin-form");
 const loginForm = document.querySelector(".login-form");
@@ -7,9 +7,7 @@ const toggleSignin = document.getElementById("toggle-signin");
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// Show the login form by default, no changes needed here as login-form is initially displayed
 
-// Toggle to show the login form
 toggleLogin.addEventListener("click", (e) => {
   e.preventDefault();
   signinForm.classList.add("hidden");
@@ -18,7 +16,7 @@ toggleLogin.addEventListener("click", (e) => {
   setTimeout(() => container.classList.remove("pulse"), 500);
 });
 
-// Toggle to show the sign-up form
+
 toggleSignin.addEventListener("click", (e) => {
   e.preventDefault();
   loginForm.classList.add("hidden");
@@ -27,14 +25,14 @@ toggleSignin.addEventListener("click", (e) => {
   setTimeout(() => container.classList.remove("pulse"), 500);
 });
 
-// Toggle dark mode
+
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   container.classList.add("shake");
   setTimeout(() => container.classList.remove("shake"), 500);
 });
 
-// Handle sign-up form submission
+
 signinForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const username = document.getElementById("signup-username").value;
@@ -45,7 +43,7 @@ signinForm.addEventListener("submit", (e) => {
   setTimeout(() => signinForm.classList.remove("pulse"), 500);
 });
 
-// Handle login form submission
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const username = document.getElementById("login-username").value;
