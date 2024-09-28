@@ -18,6 +18,112 @@ body {
 }
 
 
+:root {
+    --background-color: #ffffff;
+    --background-image: none; /* Removed gradient */
+    --primary-color: #6C63FF;
+    --secondary-color: #000000;
+    --text-color: #333333;
+    --button-background: #000000;
+    --button-color: #ffffff;
+    --button-hover-background: #ffffff;
+    --button-hover-color: #000000;
+}
+
+.dark-mode {
+    --background-color: #000000;
+    --background-image: none;
+    --text-color: #ffffff;
+    --button-background: #6C63FF;
+    --button-color: #000000;
+    --button-hover-background: #ffffff;
+    --button-hover-color: #000000;
+}
+
+body {
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.hero-buttons {
+    margin-bottom: 20px;
+}
+
+.scan-btn, .add-btn {
+    padding: 12px 25px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 25px; /* Makes the button rounded */
+    font-size: 1rem;
+    transition: 0.3s;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.scan-btn:hover, .add-btn:hover {
+    background-color: var(--button-hover-background);
+    color: var(--button-hover-color);
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 25px 0 0 25px; /* Adjusted to match button roundedness */
+    transition: 0.3s;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 0 25px 25px 0; /* Adjusted to match button roundedness */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-illustration {
+    max-width: 40%;
+}
+
+.hero-illustration img {
+    width: 100%;
+    height: auto;
+}
 
 
 
