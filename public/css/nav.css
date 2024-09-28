@@ -3,14 +3,12 @@
             --background: #ffffff;
             --text: #333333;
             --primary: #3498db;
-            --secondary: #e74c3c;
         }
 
         .dark-mode {
             --background: black;
             --text: #ffffff;
             --primary: #3498db;
-            --secondary: #e74c3c;
         }
 
         * {
