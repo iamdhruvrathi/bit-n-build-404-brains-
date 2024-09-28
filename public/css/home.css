@@ -54,6 +54,12 @@ body {
     margin-bottom: 15px;
 }
 
+.hero-buttons a {
+    text-decoration: none; /* Remove underline */
+    color: inherit;       /* Ensure the text color inherits from the button */
+}
+
+
 .scan-btn, .add-btn {
     padding: 10px 20px;
     background-color: var(--button-background);

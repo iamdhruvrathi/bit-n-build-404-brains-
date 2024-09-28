@@ -4,9 +4,12 @@ const mysql = require("mysql2");
 require("dotenv").config();
 const ejsMate = require("ejs-mate");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
+
 const app = express();
 const port = 8080;
 
+// Set up database connection
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -15,6 +18,7 @@ const connection = mysql.createConnection({
   port: process.env.DB_PORT,
 });
 
+// Middleware
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
@@ -23,10 +27,24 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Multer setup for image upload
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/uploads/"); // Save images in 'public/uploads' directory
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); // Append timestamp to avoid name collisions
+  },
+});
+
+const upload = multer({ storage: storage });
+
+// Start server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}/`);
 });
 
+// Connect to the database
 connection.connect((err) => {
   if (err) {
     console.error("Database connection failed: " + err.message);
@@ -35,6 +53,7 @@ connection.connect((err) => {
   console.log("Connected to the database.");
 });
 
+// Routes
 app.get("/", (req, res) => {
   res.render("files/home");
 });
@@ -69,15 +88,6 @@ app.post("/login", async (req, res) => {
   });
 });
 
-
-
-
-
-
-
-
-
-
 app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -108,6 +118,24 @@ app.post("/register", async (req, res) => {
   });
 });
 
+// GET route for Add Collection
+app.get("/add-collections", (req, res) => {
+  res.render("files/addcollections");
+});
 
+// POST route for adding a new collection
+app.post("/add-collection", upload.single("image"), (req, res) => {
+  const { type, color } = req.body;
+  const image = req.file.filename; // Get the uploaded file's name
 
+  const sql = "INSERT INTO collections (type, color, image) VALUES (?, ?, ?)";
+  connection.query(sql, [type, color, image], (err, result) => {
+    if (err) {
+      console.error("Error inserting collection: " + err.message);
+      return res.status(500).send("Error adding collection");
+    }
+    console.log("Collection added successfully");
+    res.render("files/home");
+  });
+});
 
