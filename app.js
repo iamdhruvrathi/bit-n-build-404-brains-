@@ -53,10 +53,32 @@ connection.connect((err) => {
   console.log("Connected to the database.");
 });
 
+// Sample data for demonstration
+const mostWornItems = [
+  { name: 'Blue T-Shirt', count: 15 },
+  { name: 'Black Jeans', count: 10 },
+  { name: 'White Sneakers', count: 8 }
+];
+
+const leastWornItems = [
+  { name: 'Red Jacket', count: 1 },
+  { name: 'Formal Shoes', count: 0 },
+  { name: 'Green Hoodie', count: 2 }
+];
+
 // Routes
 app.get("/", (req, res) => {
   res.render("files/home", { wardrobeItems });
 });
+
+app.get("/community", (req, res) => {
+  res.render("files/community", { wardrobeItems });
+});
+
+app.get('/stats', (req, res) => {
+  res.render('files/stats', { mostWornItems, leastWornItems });
+});
+
 
 app.get("/login", (req, res) => {
   res.render("files/signin");
